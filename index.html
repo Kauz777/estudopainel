@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Comerciante - Login</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box" id="loginForm">
+            <h2>Acessar Meu Painel</h2>
+            <form id="formLogin">
+                <div class="input-group">
+                    <label for="emailLogin">E-mail</label>
+                    <input type="email" id="emailLogin" required placeholder="seu@email.com">
+                </div>
+                <div class="input-group">
+                    <label for="senhaLogin">Senha</label>
+                    <input type="password" id="senhaLogin" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+            <p class="switch-text">Não tem uma conta? <a href="#" id="toRegister">Cadastre seu comércio</a></p>
+        </div>
+
+        <div class="form-box hidden" id="registerForm">
+            <h2>Criar Conta do Comércio</h2>
+            <form id="formRegister">
+                <div class="input-group">
+                    <label for="nomeComercio">Nome do Comércio</label>
+                    <input type="text" id="nomeComercio" required placeholder="Ex: Barbearia do Pedro">
+                </div>
+                <div class="input-group">
+                    <label for="emailRegister">E-mail Corporativo</label>
+                    <input type="email" id="emailRegister" required placeholder="contato@comercio.com">
+                </div>
+                <div class="input-group">
+                    <label for="senhaRegister">Senha</label>
+                    <input type="password" id="senhaRegister" required placeholder="Mínimo 6 caracteres">
+                </div>
+                <button type="submit" class="btn">Cadastrar e Configurar</button>
+            </form>
+            <p class="switch-text">Já tem conta? <a href="#" id="toLogin">Faça Login</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

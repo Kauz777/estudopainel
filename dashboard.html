@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- BARRA LATERAL DE NAVEGAÇÃO -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>AgendaSaaS</h2>
+                <span id="nomeLoja">Minha Empresa</span>
+            </div>
+            <nav class="menu">
+                <a href="#" class="active">📊 Dashboard</a>
+                <a href="#">📅 Agenda</a>
+                <a href="#">✂️ Serviços</a>
+                <a href="#">👥 Clientes</a>
+                <a href="#" class="logout-btn">🚪 Sair</a>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Visão Geral</h1>
+                <div class="user-profile">Status: <span class="status-badge">Online</span></div>
+            </header>
+
+            <!-- CARDS DE MÉTRICAS -->
+            <section class="metrics-grid">
+                <div class="card card-lucro">
+                    <h3>Faturamento (Mês)</h3>
+                    <p class="metric-value">R$ 4.520,00</p>
+                    <span class="metric-sub">+12% em relação ao mês passado</span>
+                </div>
+                <div class="card card-agendamentos">
+                    <h3>Agendamentos Hoje</h3>
+                    <p class="metric-value" id="qtdAgendamentos">8</p>
+                    <span class="metric-sub">3 concluídos hoje</span>
+                </div>
+                <div class="card card-cancelamentos">
+                    <h3>Cancelamentos</h3>
+                    <p class="metric-value">2</p>
+                    <span class="metric-sub text-danger">Taxa de 4% este mês</span>
+                </div>
+            </section>
+
+            <!-- CONTEÚDO DIVIDIDO: AGENDA E GRÁFICO SIMULADO -->
+            <section class="dashboard-body">
+                <!-- PRÓXIMOS AGENDAMENTOS -->
+                <div class="panel-list">
+                    <h2>Próximos Horários (Hoje)</h2>
+                    <div class="appointment-item">
+                        <div class="time">09:00</div>
+                        <div class="info">
+                            <h4>Carlos Silva</h4>
+                            <p>Corte de Cabelo + Barba</p>
+                        </div>
+                        <span class="status-tag confirmed">Confirmado</span>
+                    </div>
+                    <div class="appointment-item">
+                        <div class="time">10:30</div>
+                        <div class="info">
+                            <h4>Mariana Costa</h4>
+                            <p>Reserva de Mesa (4 pessoas)</p>
+                        </div>
+                        <span class="status-tag confirmed">Confirmado</span>
+                    </div>
+                    <div class="appointment-item">
+                        <div class="time">14:00</div>
+                        <div class="info">
+                            <h4>Roberto Souza</h4>
+                            <p>Manutenção Geral</p>
+                        </div>
+                        <span class="status-tag pending">Pendente</span>
+                    </div>
+                </div>
+
+                <!-- GRÁFICO SIMULADO -->
+                <div class="panel-chart">
+                    <h2>Desempenho Semanal</h2>
+                    <div class="mock-chart">
+                        <!-- Barras simulando um gráfico via CSS puro -->
+                        <div class="bar" style="height: 40%;" data-day="Seg"></div>
+                        <div class="bar" style="height: 65%;" data-day="Ter"></div>
+                        <div class="bar" style="height: 85%;" data-day="Qua"></div>
+                        <div class="bar" style="height: 50%;" data-day="Qui"></div>
+                        <div class="bar" style="height: 95%;" data-day="Sex"></div>
+                        <div class="bar" style="height: 100%;" data-day="Sáb"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

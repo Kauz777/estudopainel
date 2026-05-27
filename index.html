@@ -6,12 +6,13 @@
     <title>Painel do Comerciante - Login</title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
-        /* CSS básico caso seu style.css falhe ou para garantir o funcionamento do hidden */
+        /* CSS para garantir o funcionamento do ocultamento das telas */
         .hidden { display: none !important; }
     </style>
 </head>
 <body>
     <div class="container">
+        
         <div class="form-box" id="loginForm">
             <h2>Acessar Meu Painel</h2>
             <form id="formLogin">
@@ -25,7 +26,7 @@
                 </div>
                 <button type="submit" class="btn">Entrar</button>
             </form>
-            <p class="switch-text">Não tem uma conta? <a href="#" id="toRegister">Cadastre seu comércio</a></p>
+            <p class="switch-text">Não tem uma conta? <a href="javascript:void(0);" id="toRegister">Cadastre seu comércio</a></p>
         </div>
 
         <div class="form-box hidden" id="registerForm">
@@ -45,8 +46,9 @@
                 </div>
                 <button type="submit" class="btn">Cadastrar e Configurar</button>
             </form>
-            <p class="switch-text">Já tem conta? <a href="#" id="toLogin">Faça Login</a></p>
+            <p class="switch-text">Já tem conta? <a href="javascript:void(0);" id="toLogin">Faça Login</a></p>
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

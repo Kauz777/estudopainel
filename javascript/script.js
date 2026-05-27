@@ -2,7 +2,6 @@
 // CONFIGURAÇÃO E INICIALIZAÇÃO DO SUPABASE
 // ==========================================
 const supabaseUrl = 'https://vajoqkvvujxhcmtkkddv.supabase.co';
-// ⚠️ ATENÇÃO: Substitua o texto abaixo pela sua chave pública REAL ("anon public") encontrada no painel do Supabase
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZham9xa3Z2dWp4aGNtdGtrZGR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4MzM4NDIsImV4cCI6MjA5NTQwOTg0Mn0.foBo2c1GPL7jf3SVLjyodyr4ei9qDhU7WSW_G5kMndQ'; 
 
 // Inicializa o cliente usando o objeto global injetado pelo CDN do HTML
@@ -49,7 +48,6 @@ if (formRegister) {
         const senha = document.getElementById('senhaRegister').value;
 
         // Cria o usuário na tabela de autenticação criptografada do Supabase
-        // Salvamos o nome da empresa dentro de 'user_metadata' de forma nativa
         const { data, error } = await supabase.auth.signUp({
             email: email,
             password: senha,
@@ -65,11 +63,11 @@ if (formRegister) {
             return;
         }
 
-        alert(`Comércio "${nomeComercio}" registrado com sucesso!\nCaso o login direto não funcione, verifique a caixa de entrada do e-mail cadastrado.`);
+        alert(`Comércio "${nomeComercio}" registrado com sucesso! Redirecionando para o seu painel...`);
         
-        formRegister.reset();
-        if (registerForm) registerForm.classList.add('hidden');
-        if (loginForm) loginForm.classList.remove('hidden');
+        // CORREÇÃO: Como a confirmação por e-mail foi desativada, o Supabase loga o usuário automaticamente.
+        // Mudamos o fluxo para mandar ele direto para a dashboard, usando caminhos relativos "./" essenciais para o Git.
+        window.location.href = "./dashboard.html";
     });
 }
 
@@ -94,8 +92,8 @@ if (formLogin) {
             return;
         }
 
-        // Se der certo, redireciona para a dashboard de forma compatível com o GitHub Pages
-        window.location.href = "dashboard.html";
+        // CORREÇÃO: Ajustado caminho para "./dashboard.html" para o GitHub Pages não quebrar as rotas
+        window.location.href = "./dashboard.html";
     });
 }
 
@@ -108,10 +106,10 @@ if (document.getElementById('nomeLoja')) {
     async function checarSessao() {
         const { data: { user }, error } = await supabase.auth.getUser();
 
-        // Se não houver usuário logado ou ocorrer falha de token, barra o acesso
+        // CORREÇÃO: Se não houver usuário logado, redireciona usando caminhos relativos para a index
         if (!user || error) {
             alert('Acesso negado! Faça login primeiro.');
-            window.location.href = "index.html";
+            window.location.href = "./index.html";
         } else {
             // Recupera o nome da empresa salvo nos metadados da conta
             const nomeDoComercio = user.user_metadata.display_name || "Minha Empresa";
@@ -139,7 +137,8 @@ if (document.getElementById('nomeLoja')) {
                 return;
             }
             
-            window.location.href = "index.html";
+            // CORREÇÃO: Ajustado caminho de saída para usar caminhos relativos
+            window.location.href = "./index.html";
         });
     }
 }

@@ -6,9 +6,9 @@
     <title>Painel Administrativo - Dashboard</title>
     <link rel="stylesheet" href="./css/style.css">
     <style>
-        /* Proteção visual: esconde o painel até o JS confirmar que o usuário está logado */
-        body { display: none; }
-        .auth-checked body { display: block; }
+        /* CORREÇÃO DA PROTEÇÃO VISUAL: Esconde o html/body até o JS validar a sessão */
+        html { display: none; }
+        html.auth-checked { display: block; }
     </style>
 </head>
 <body>
@@ -19,11 +19,11 @@
                 <span id="nomeLoja">Carregando...</span>
             </div>
             <nav class="menu">
-                <a href="#" class="active">📊 Dashboard</a>
-                <a href="#">📅 Agenda</a>
-                <a href="#">✂️ Serviços</a>
-                <a href="#">👥 Clientes</a>
-                <a href="#" class="logout-btn">🚪 Sair</a>
+                <a href="./dashboard.html" class="active">📊 Dashboard</a>
+                <a href="javascript:void(0);">📅 Agenda</a>
+                <a href="javascript:void(0);">✂️ Serviços</a>
+                <a href="javascript:void(0);">👥 Clientes</a>
+                <a href="javascript:void(0);" class="logout-btn">🚪 Sair</a>
             </nav>
         </aside>
 
@@ -96,7 +96,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
     <script src="./javascript/script.js"></script>
 </body>
 </html>

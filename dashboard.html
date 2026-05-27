@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo - Dashboard</title>
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Proteção visual: esconde o painel até o JS confirmar que o usuário está logado */
+        body { display: none; }
+        .auth-checked body { display: block; }
+    </style>
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- BARRA LATERAL DE NAVEGAÇÃO -->
         <aside class="sidebar">
             <div class="logo">
                 <h2>AgendaSaaS</h2>
-                <span id="nomeLoja">Minha Empresa</span>
+                <span id="nomeLoja">Carregando...</span>
             </div>
             <nav class="menu">
                 <a href="#" class="active">📊 Dashboard</a>
@@ -23,14 +27,12 @@
             </nav>
         </aside>
 
-        <!-- CONTEÚDO PRINCIPAL -->
         <main class="main-content">
             <header class="top-header">
                 <h1>Visão Geral</h1>
                 <div class="user-profile">Status: <span class="status-badge">Online</span></div>
             </header>
 
-            <!-- CARDS DE MÉTRICAS -->
             <section class="metrics-grid">
                 <div class="card card-lucro">
                     <h3>Faturamento (Mês)</h3>
@@ -49,9 +51,7 @@
                 </div>
             </section>
 
-            <!-- CONTEÚDO DIVIDIDO: AGENDA E GRÁFICO SIMULADO -->
             <section class="dashboard-body">
-                <!-- PRÓXIMOS AGENDAMENTOS -->
                 <div class="panel-list">
                     <h2>Próximos Horários (Hoje)</h2>
                     <div class="appointment-item">
@@ -80,11 +80,9 @@
                     </div>
                 </div>
 
-                <!-- GRÁFICO SIMULADO -->
                 <div class="panel-chart">
                     <h2>Desempenho Semanal</h2>
                     <div class="mock-chart">
-                        <!-- Barras simulando um gráfico via CSS puro -->
                         <div class="bar" style="height: 40%;" data-day="Seg"></div>
                         <div class="bar" style="height: 65%;" data-day="Ter"></div>
                         <div class="bar" style="height: 85%;" data-day="Qua"></div>
@@ -96,5 +94,9 @@
             </section>
         </main>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script src="./javascript/script.js"></script>
 </body>
 </html>
